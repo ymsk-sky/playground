@@ -4,12 +4,50 @@
     <meta charset="utf-8">
     <title>Vue Sample</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-simple-suggest/dist/styles.css">
+
     <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer type="text/javascript" src="https://unpkg.com/vue-simple-suggest"></script>
+    <script defer src="https://unpkg.com/vue-cool-select"></script>
     <script defer type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
     <div id="app">
       <p>{{ message }}</p>
+      <div class="autocomplete">
+        <h2>HTML5のautocomplete属性を使う</h2>
+        <input type="text" autocomplete="on" list="fruits" />
+        <datalist id="fruits">
+          <option v-for="n in ['バナナ', 'りんご', 'オレンジ']" :key="n">
+            {{n}}
+          </option>
+        </datalist>
+      </div>
+      <div class="simple-suggest">
+        <h2>vue-simple-suggestを使う</h2>
+        <p>入力した文字列に対して候補が出る。</p>
+        <vue-simple-suggest
+          v-model="selected_simple"
+          :list="simpleSuggestionList"
+          :filter-by-query="true"
+        >
+        </vue-simple-suggest>
+      </div>
+      <div class="cool-select">
+        <h2>vue-cool-selectを使う</h2>
+        <p>候補が出る。なんか挙動が変？</p>
+        <div class="cool-select-input">
+          <cool-select
+            v-model="selected_cool"
+            :items="items"
+            placeholder="Select name"
+          >
+          </cool-select>
+        </div>
+      </div>
+      <div class="suggest-input">
+        <a href="https://qiita.com/teramo3033/items/aa93c3de35a7c66a2cd2">説明リンク</a>
+      </div>
     </div>
   </body>
 </html>
