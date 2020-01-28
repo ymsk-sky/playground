@@ -1,0 +1,17 @@
+#result-img {
+  width: 300px;
+  height: 300px;
+}
+
+.images-area img {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.myclass {
+  animation: m1 200ms linear;
+}
+
+@keyframes m1 {
+  0% { transform: translateX(-60px); }
+  100% { transform: translateX(0px); }
+}

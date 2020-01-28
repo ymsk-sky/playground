@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" href="css/master.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script defer src="js/master.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="images-area">
+        <img src="img/a.png" id="a-img" @mouseover="changeImg" @mouseleave="stopAnime">
+        <img src="img/b.png" id="b-img" @mouseover="changeImg" @mouseleave="stopAnime">
+        <img src="img/c.png" id="c-img" @mouseover="changeImg" @mouseleave="stopAnime">
+      </div>
+      <div class="result-area">
+        <img :src="imgSrc" id="result-img" v-bind:class="{ myclass:isSelected }">
+      </div>
+    </div>
+  </body>
+</html>
