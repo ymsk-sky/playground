@@ -2,6 +2,7 @@
 # import os
 # os.environ['SDL_JOYSTICK_HIDAPI_PS4_RUMBLE'] = '1'
 
+import time
 import pygame
 
 pygame.init()
@@ -19,6 +20,9 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.JOYBUTTONUP:
             running = False
+    time.sleep(0.5)
+    joystick.stop_rumble()
+    joystick.rumble(1.0, 1.0, 0)
 
 joystick.stop_rumble()
 print("fin")
