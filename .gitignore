@@ -1,5 +1,12 @@
+# cache file
+__pycache__/
 .DS_Store
 
-.venv
-venv
-env
+# python environment
+.env
+.venv/
+venv/
+env/
+
+# personal info file
+*.json
